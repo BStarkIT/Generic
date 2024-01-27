@@ -1,0 +1,21 @@
+#Use input file name with the csv and header name "email" 
+$lists=Import-Csv "C:\scripts\o365\user_proxy_removal.csv"
+foreach ($list in $lists) {
+$Mailboxes = Get-Mailbox -Identity $list.Email
+foreach ($Mailbox in $Mailboxes) {
+$Mailbox | Set-mailbox -EmailAddressPolicyEnabled $false
+Start-Sleep -Seconds 15
+$Mailbox.EmailAddresses | Where-Object { ($_ -clike "smtp*") -and ($_ -like "*@scotland-judiciary.org.uk") } | 
+    ForEach-Object { 
+        Set-Mailbox $Mailbox.Name -EmailAddresses @{remove = $_ }
+#Write output
+        Write-Host "Removing $_ from $Mailbox Mailbox" -ForegroundColor Green
+    }
+}
+}
+#use input csv file for logs
+$lists=Import-Csv "C:\scripts\o365\user_proxy_removal.csv"
+foreach ($list in $lists) {
+$Mailboxes = Get-Mailbox -Identity $list.Email | select Name,PrimarySmtpAddress | Export-csv -append  "C:\scripts\o365\logs\user_report-$((Get-Date).ToString('MM-dd-yyyy_HH-mm-ss')).csv"
+}
+

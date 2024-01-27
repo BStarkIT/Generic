@@ -1,0 +1,1 @@
+﻿Get-ADUser -SearchBase "DC=ad,DC=realise,DC=com" -filter * -properties Name, PasswordNeverExpires, PasswordExpired, PasswordLastSet, Office | Where-Object {$_.Enabled -eq "True"} | Where-Object {$_.PasswordNeverExpires -eq $false} | Where-Object {$_.passwordexpired -eq $true}

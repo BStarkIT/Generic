@@ -1,0 +1,1 @@
+﻿get-mailbox -resultsize unlimited | Get-MailboxStatistics | Sort-Object LastLogonTime -Descending | select displayname, lastlogontime >C:\tools\LastLogonTime.txt

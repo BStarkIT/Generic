@@ -1,0 +1,1 @@
+Get-MessageTrackingLog -start 12/13/2021 -end 12/16/2021 -sender ICMS-alerts@scotcourts.gov.uk -ResultSize unlimited | Select MessageSubject,Timestamp,Sender,ClientIP | Export-Csv -Path C:\ps\log3.csv -NoTypeInformation

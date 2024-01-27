@@ -1,0 +1,1 @@
+Get-Mailbox -ResultSize unlimited | Get-MailboxPermission -User LCrabtree@scotcourts.gov.uk | Select-Object identity

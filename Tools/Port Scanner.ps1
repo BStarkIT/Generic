@@ -1,0 +1,1 @@
+$Server = Read-Host -Prompt 'Input your target IP/host' ; 1..65536 | ForEach-Object {$test= new-object system.Net.Sockets.TcpClient; $wait = $test.beginConnect("$Server",$_,$null,$null); ($wait.asyncwaithandle.waitone(250,$false)); if ($test.Connected){Write-Output "$_ open"}else{Write-Output "$_ closed"}} | select-string " "

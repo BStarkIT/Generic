@@ -1,0 +1,1 @@
+﻿    Add-Printer -ConnectionName \\steiger.ad.realise.com\FOLLOW_ME

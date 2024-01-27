@@ -1,0 +1,1 @@
+Get-MailboxAutoReplyConfiguration -Identity MHTSTeam3@scotcourtstribunals.gov.uk

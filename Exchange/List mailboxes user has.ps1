@@ -1,0 +1,1 @@
+Get-Mailbox -RecipientTypeDetails UserMailbox,SharedMailbox -ResultSize Unlimited | Get-MailboxPermission -User gnicol2@scotcourts.gov.uk | Format-List

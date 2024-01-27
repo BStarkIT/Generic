@@ -1,0 +1,1 @@
+﻿Get-MessageTrackingLog  -resultsize unlimited  -Sender *pkc.gov.uk -Start "04/10/2021 09:00:00" -End "04/20/2021 18:00:00" | ft Timestamp, Source, Sender, MessageSubject

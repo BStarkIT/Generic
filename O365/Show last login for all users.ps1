@@ -1,0 +1,1 @@
+﻿get-mailbox -resultsize unlimited | Get-MailboxStatistics | Sort-Object LastLogonTime -Descending | Select-Object displayname, lastlogontime >C:\Powershell\LastLogonTime.txt

@@ -1,0 +1,1 @@
+﻿Get-MailboxFolderStatistics -Identity HPCAdmin@scotcourtstribunals.gov.uk -FolderScope Inbox | Format-Table Identity,ItemsInFolderAndSubfolders,FolderAndSubfolderSize -AutoSize

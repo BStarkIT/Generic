@@ -1,0 +1,1 @@
+Get-ADUser -filter {enabled -eq $true} -Properties mailNickname | Where-Object { $_.mailNickname -ne $_.SamAccountName } | Select-Object SamAccountName | Export-Csv C:\PS\mailname.csv -NoTypeInformation. 

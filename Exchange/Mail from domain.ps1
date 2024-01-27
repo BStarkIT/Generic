@@ -1,0 +1,1 @@
+Get-MessageTrackingLog -resultsize unlimited -Start (Get-Date).AddHours(-1 ) | Where-Object { $_.sender -like "*gmail.com*" }
